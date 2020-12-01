@@ -75,4 +75,27 @@ class AssertJTest {
             .containsExactly("red", "green", "blue")
             .doesNotContain("yellow")
     }
+
+    @Test
+    fun lessonAssertThatTest() {
+        val arr = arrayOf(3, 1, 4)
+
+        /*
+        1 配列のサイズが3である
+        2 2を含まない
+        3 1つ目の要素が3である
+        4 2つ目の要素が正の数である
+        5 3つの目の要素は4以下である
+         */
+        assertThat(arr)
+            .hasSize(3)
+            .doesNotContain(2)
+
+        assertThat(arr[0])
+            .isEqualTo(3)
+        assertThat(arr[1])
+            .isNotNegative()
+        assertThat(arr[2])
+            .isLessThanOrEqualTo(4)
+    }
 }
