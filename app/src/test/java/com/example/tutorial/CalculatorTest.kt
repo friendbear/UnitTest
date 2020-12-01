@@ -4,13 +4,14 @@ import org.junit.Test
 
 import org.junit.Assert.*
 import org.assertj.core.api.Assertions.*
+import org.junit.After
 import org.junit.Before
 import org.junit.Ignore
 
 class CalculatorTest {
 
     lateinit var calculator: Calculator
-    
+
     @Before
     fun setUp() {
         calculator = Calculator()
@@ -54,5 +55,10 @@ class CalculatorTest {
     fun divide_Zero() {
         val actual = calculator.divide(5, 0)
 
+    }
+
+    @After
+    fun tearDown() {
+        
     }
 }
