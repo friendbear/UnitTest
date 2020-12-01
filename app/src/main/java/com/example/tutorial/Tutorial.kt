@@ -12,3 +12,4 @@ class Calculator {
         return x / y.toDouble()
     }
 }
+
