@@ -51,4 +51,28 @@ class AssertJTest {
             .isBetween(3.0, 3.2)
         }
     }
+
+    @Test
+    fun assertThatArrayTest() {
+
+        val sut = arrayOf("red", "green", "blue")
+        Assertions.assertThat(sut)
+            .hasSize(3)
+            .contains("green")
+            .containsOnly("blue", "red", "green")
+            .containsExactly("red", "green", "blue")
+            .doesNotContain("yellow")
+    }
+
+    @Test
+    fun assertThatCollectionTest() {
+
+        val sut = listOf<String>("red", "green", "blue")
+        Assertions.assertThat(sut)
+            .hasSize(3)
+            .contains("green")
+            .containsOnly("blue", "red", "green")
+            .containsExactly("red", "green", "blue")
+            .doesNotContain("yellow")
+    }
 }
