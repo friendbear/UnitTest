@@ -31,5 +31,24 @@ class AssertJTest {
                 .isInstanceOf(String::class.java)
         }
     }
-
+    @Test
+    fun assertThatNumberTest() {
+        assertThat(3.1415)
+            .isNotZero()
+            .isNotNegative()
+            .isLessThan(4.0)
+            .isGreaterThanOrEqualTo(3.0)
+            .isBetween(3.0, 3.2)
+    }
+    @Test
+    fun assertThatNumberTestAllAssertions() {
+        SoftAssertions().apply {
+            Assertions.assertThat(3.1415)
+            .isNotZero()
+            .isNotNegative()
+            .isLessThan(4.0)
+            .isGreaterThanOrEqualTo(3.0)
+            .isBetween(3.0, 3.2)
+        }
+    }
 }
