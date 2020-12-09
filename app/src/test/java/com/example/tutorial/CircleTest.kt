@@ -4,6 +4,8 @@ import org.junit.Test
 
 import org.junit.Assert.*
 import org.assertj.core.api.Assertions.*
+import org.junit.runner.RunWith
+import org.junit.runners.Suite
 
 class CircleTest {
 
@@ -15,7 +17,7 @@ class CircleTest {
         assertThat(Circle(3.14).pi).isEqualTo(expected)
 
     }
-    
+
     @Test
     fun getArea() {
 
@@ -25,3 +27,7 @@ class CircleTest {
         assertThat(actual).isEqualTo(expected)
     }
 }
+
+@RunWith(Suite::class)
+@Suite.SuiteClasses(FizzBuzz::class, CircleTest::class)
+class SuiteTest{}
