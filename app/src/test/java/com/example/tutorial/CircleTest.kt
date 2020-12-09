@@ -29,5 +29,5 @@ class CircleTest {
 }
 
 @RunWith(Suite::class)
-@Suite.SuiteClasses(FizzBuzz::class, CircleTest::class)
+@Suite.SuiteClasses(CircleTest::class, FizzBuzz::class)
 class SuiteTest{}
