@@ -8,14 +8,12 @@ class FizzBuzz {
         val a = value % 3 == 0
         val b = value % 5 == 0
 
-        return if (a && b) {
-            "FizzBuzz"
-        } else if (a && !b) {
-            "Fizz"
-        } else if (!a && b) {
-            "Buzz"
-        } else {
-            value.toString()
+        return when {
+            (a && b)  -> "FizzBuzz"
+            (a && !b) -> "Fizz"
+            (!a && b) -> "Buzz"
+            else ->      value.toString()
+
         }
     }
 }
