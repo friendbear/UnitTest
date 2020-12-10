@@ -59,6 +59,6 @@ class CalculatorTest {
 
     @After
     fun tearDown() {
-        
+
     }
 }
