@@ -5,7 +5,7 @@ import org.junit.Test
 import org.junit.Assert.*
 import org.assertj.core.api.Assertions.*
 
-class NameListTest {
+class MutableListTest {
 
     @Test
     fun add() {
