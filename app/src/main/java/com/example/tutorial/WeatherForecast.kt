@@ -1,8 +1,7 @@
 package com.example.tutorial
 
 
-class WeatherForecast (val satellite: Satellite){
-    private val recorder = WeatherRecorder()
+class WeatherForecast (val satellite: Satellite, val recorder: WeatherRecorder) {
 
     fun shouldBringUmbrella(): Boolean {
         return when (satellite.getWeather()) {
@@ -17,12 +16,21 @@ class WeatherForecast (val satellite: Satellite){
     }
 }
 
-class WeatherRecorder {
-    fun record(weather: String): Unit{
+open class WeatherRecorder {
+    open fun record(weather: String): Unit{
         // DB
     }
 }
 
+class MockWeatherRecorder: WeatherRecorder() {
+    var currentWeather = ""
+    var isCalled = false
+
+    override fun record(weather: String) {
+        this.currentWeather = weather
+        this.isCalled = true
+    }
+}
 open class Satellite {
 
     open fun getWeather(): String {
