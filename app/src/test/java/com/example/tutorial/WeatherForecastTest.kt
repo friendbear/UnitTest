@@ -1,10 +1,26 @@
 package com.example.tutorial
 
+import com.nhaarman.mockitokotlin2.mock
+import com.nhaarman.mockitokotlin2.whenever
 import org.junit.Assert.*
 import org.junit.Test
 import org.assertj.core.api.Assertions.*
 
 class WeatherForecastTest {
+
+    lateinit var stubSatellite: Satellite
+    lateinit var mockWeatherRecorder: WeatherRecorder
+
+    @Test
+    fun getWeatherが晴れならばshouldBringUmbrellaがfalseを返す() {
+        stubSatellite = mock(name = "StubSatellite")
+        whenever(stubSatellite.getWeather()).thenReturn("晴れ")
+
+        val weatherForecast = WeatherForecast(stubSatellite, WeatherRecorder())
+        val actual = weatherForecast.shouldBringUmbrella()
+        assertThat(actual).isFalse()
+    }
+    
 
     @Test
     fun getWeatherが雨ならshouldBringUmbrellaがtrueを返す() {
