@@ -1,5 +1,7 @@
 package com.example.tutorial
 
+import kotlin.random.Random
+
 
 class WeatherForecast (val satellite: Satellite, val recorder: WeatherRecorder) {
 
@@ -34,7 +36,11 @@ class MockWeatherRecorder: WeatherRecorder() {
 open class Satellite {
 
     open fun getWeather(): String {
-        return "晴れ"
+        return when (Random.nextInt()) {
+            in 0..5 -> "晴れ"
+            in 6..8 -> "曇り"
+            else -> "雨"
+        }
     }
 
 }
