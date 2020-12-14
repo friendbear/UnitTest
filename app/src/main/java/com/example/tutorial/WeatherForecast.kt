@@ -13,7 +13,7 @@ class WeatherForecast (val satellite: Satellite){
 
 open class Satellite {
 
-    fun getWeather(): String {
+    open fun getWeather(): String {
         return "晴れ"
     }
 
